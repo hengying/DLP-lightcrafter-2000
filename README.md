@@ -13,6 +13,9 @@ Same as: [Build a Pi Zero W pocket projector! ](https://www.mickmake.com/post/bu
 * DLP's *VINTF* should be connected to *3V3*
 * DLP's *PROJ_ON_EXT* connected to RP4's *GPIO 22*
 
+# Not used DLP Parallel I/F pins
+These pins should be connected to GND: D18, D19, D20, D21, D22, D23.
+
 # Raspberry Pi 4b's configuration
 According to [Raspberry Pi Hat for TI LightCrafter Display DLP2000](https://www.intellar.ca/blog/raspberry-pi-evm2000) on [intellar.ca](https://www.intellar.ca/)
 
