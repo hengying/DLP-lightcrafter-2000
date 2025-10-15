@@ -11,7 +11,7 @@ Same as: [Build a Pi Zero W pocket projector! ](https://www.mickmake.com/post/bu
 # Additional Pin connections
 * DLP's *HOST_PRESENTZ* should be connected to *GND*
 * DLP's *VINTF* should be connected to *3V3*
-* DLP's *PROJ_ON_EXT* should be connected to RP4's *GPIO 22*
+* DLP's *PROJ_ON_EXT* connected to RP4's *GPIO 22*
 
 # Raspberry Pi 4b's configuration
 According to [Raspberry Pi Hat for TI LightCrafter Display DLP2000](https://www.intellar.ca/blog/raspberry-pi-evm2000) on [intellar.ca](https://www.intellar.ca/)
@@ -43,7 +43,7 @@ i2cset -y 22 0x1b 0x0b 0x00 0x00 0x00 0x00 i
 ```
 
 # I2C address
-My DLP's I2C address is 22. You could check it by "i2cdetect -l".
+My DLP's I2C address is 22. It could checked it by "i2cdetect -l".
 On my RP4, I got this:
 ```
 i2c-20  i2c             fef04500.i2c                            I2C adapter
@@ -61,6 +61,7 @@ sudo gpio drive 0 5
 raspi-gpio set 0-21 a2 pn
 sleep 1
 ```
+[WiringPi](https://projects.drogon.net/raspberry-pi/wiringpi/download-and-install/) or [pigpio](https://abyz.me.uk/rpi/pigpio/download.html) should be installed to set the drive strength of RP4's GPIO.
 
 ## turn on DLP
 ```
@@ -75,7 +76,7 @@ echo pixel format
 i2cset -y 22 0x1b 0x0d 0x00 0x00 0x00 0x02 i
 echo resolution
 i2cset -y 22 0x1b 0x0c 0x00 0x00 0x00 0x1B i
-echo input
+echo parallel input
 i2cset -y 22 0x1b 0x0b 0x00 0x00 0x00 0x00 i
 ```
 
@@ -85,9 +86,11 @@ gpio -g write 22 0
 ```
 
 # More details
-1. I make a PCB from [JLCPCB](https://jlcpcb.com/)
-2. I make a simple 3D printed shell
+1. I made several PCBs from [JLCPCB](https://jlcpcb.com/)
+2. I made a simple 3D printed shell
 
 ![PCB](/pics/PCB.png)
 
 ![PCB](/pics/3d_printed_shell.jpg)
+
+
