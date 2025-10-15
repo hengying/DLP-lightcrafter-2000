@@ -87,3 +87,7 @@ gpio -g write 22 0
 # More details
 1. I make a PCB from [JLCPCB](https://jlcpcb.com/)
 2. I make a simple 3D printed shell
+
+![PCB](/pics/PCB.png)
+
+![PCB](/pics/3d_printed_shell.jpg)
